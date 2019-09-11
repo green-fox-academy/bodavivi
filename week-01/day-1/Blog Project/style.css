@@ -1,0 +1,67 @@
+body{
+    background-image: url(hatter.jpg);
+    background-size: 25% 25%;
+}
+
+#header{
+    background-color: #275362;
+    border: 1px solid;
+    color: #E9E9E9;
+    font-size: 40px;
+    padding: 10px 0px 10px 150px;
+}
+
+
+.new, form, #submit, .posts{
+    margin-left: 150px;
+}
+
+.posts{
+    color: #393939;
+}
+h4{
+    color: #393939;
+    font-size: 20px;
+}
+
+.new{
+    font-size: 30px;
+    color: #275362;
+
+}
+
+#title{
+    color: darkslategray;
+    background-color: #f0f0f0;
+}
+#content{
+    width: 1000px;
+    height: 150px;
+    color: darkslategray;
+    background-color: #f0f0f0;
+}
+
+#submit{
+    background: lightgrey;
+    border: 1px solid #275362;
+    border-radius: 5px;
+    text-align: center;
+    width: 90px;
+}
+
+.blog-posts{
+    border: 1px solid #275362;
+    margin: 10px 150px 10px 150px;
+    width: 1000px;
+    padding: 0px 10px 0px 10px;
+    text-align: justify;
+    background: #ACC9D1;
+}
+
+h2{
+    color: #275362;
+}
+
+p{
+    color: #393939;
+}
