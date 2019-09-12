@@ -23,20 +23,18 @@ public class VariableMutation {
         int f1 = 123;
         int f2 = 345;
         boolean isItBigger = (f1 > f2);
-        if(isItBigger) {
+        if (isItBigger) {
             System.out.println("f1 is bigger than f2");
-        }
-        else {
+        } else {
             System.out.println("f1 is smaller or equal to f2");
         }
 
         int g1 = 350;
         int g2 = 200;
-        boolean theDoubleOfG2IsBigger = ((g2 *=2) > g1);
+        boolean theDoubleOfG2IsBigger = ((g2 *= 2) > g1);
         if (theDoubleOfG2IsBigger) {
             System.out.println("The double of g2 is bigger than g1.");
-        }
-        else {
+        } else {
             System.out.println("The double of g2 is smaller or equal to g1.");
         }
 
@@ -44,8 +42,7 @@ public class VariableMutation {
         boolean ADividerOfH = ((h % 11) == 0);
         if (ADividerOfH) {
             System.out.println("11 is a Divider of 135798745");
-        }
-        else {
+        } else {
             System.out.println("11 is not a divider of 135798745.");
         }
 
@@ -56,8 +53,7 @@ public class VariableMutation {
         boolean iToI = (i1 > (i2Squared)) && (i1 < (i2Cubed));
         if (iToI) {
             System.out.println("i1 is higher than i2 squared and smaller than i2 cubed");
-        }
-        else {
+        } else {
             System.out.println("i1 is not higher than i2 squared and smaller than i2 cubed at the same time");
         }
 
@@ -65,8 +61,7 @@ public class VariableMutation {
         boolean jIsDividableby = ((j % 3) == 0) || ((j % 5) == 0);
         if (jIsDividableby) {
             System.out.println("j is dividable by 3 or 5");
-        }
-        else
+        } else
             System.out.println("j is not dividable by 3 or 5");
 
 
