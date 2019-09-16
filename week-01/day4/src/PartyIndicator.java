@@ -9,15 +9,16 @@ public class PartyIndicator {
         Scanner boys = new Scanner(System.in);
         int boysNumber = boys.nextInt();
 
-        if ((girlsNumber + boysNumber > 19) && (girlsNumber == boysNumber)) {
+        if (girlsNumber == 0) {
+            System.out.println("Sausage party");
+        }
+        else if ((girlsNumber + boysNumber > 19) && (girlsNumber == boysNumber)) {
             System.out.println("The party will be excellent!");
         }
         else if ((girlsNumber + boysNumber > 19) && (girlsNumber != boysNumber)) {
             System.out.println("The party will be quite cool!");
         }
-        else if (girlsNumber == 0) {
-            System.out.println("Sausage party");
-        }
+
         else if (girlsNumber + boysNumber < 20) {
             System.out.println("Average party...");
 
