@@ -1,6 +1,7 @@
 import java.sql.Array;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ListInstruction2 {
     public static void main(String[] args) {
@@ -51,11 +52,7 @@ public class ListInstruction2 {
         listB.indexOf("Durian");
 
         //Add Passion Fruit and Pomelo to List B in a single statement
-        ArrayList<String> auxlist = new ArrayList<>();
-        auxlist.add("Passion Fruit");
-        auxlist.add("Pomelo");
-
-        listB.addAll (auxlist);
+        listB.addAll (new ArrayList<>(Arrays.asList("Passion Fruit", "Pomelo")));
 
         //Print out the 3rd element from List A
 
