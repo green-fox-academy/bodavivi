@@ -101,7 +101,7 @@ public class ListIntroduction1 {
         //Remove all elements
 
         names.clear();
-        
+
 
 
 
