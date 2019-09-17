@@ -15,10 +15,7 @@ public class ListIntroduction1 {
         names.add ("William");
 
 
-        for (int i = 0; i <10 ; i++) {
-            System.out.print("-");
 
-        }
         System.out.println();
 
         //Print out whether the list is empty or not
@@ -35,20 +32,14 @@ public class ListIntroduction1 {
         names.add("John");
         names.add("Amanda");
 
-        for (int i = 0; i <10 ; i++) {
-            System.out.print("-");
 
-        }
         System.out.println();
 
         //Print out the number of elements in the list
 
         System.out.println(names.size());
 
-        for (int i = 0; i <10 ; i++) {
-            System.out.print("-");
 
-        }
         System.out.println();
 
         //Print out the 3rd element
@@ -57,20 +48,14 @@ public class ListIntroduction1 {
         for (int i = 0; i <20 ; i++) {
 
         }
-        for (int i = 0; i <10 ; i++) {
-            System.out.print("-");
 
-        }
         System.out.println();
 
         //Iterate through the list and print out each name
         for (String name : names){
             System.out.println(name);
         }
-        for (int i = 0; i <10 ; i++) {
-            System.out.print("-");
 
-        }
         System.out.println();
 
         //Iterate through the list and print
@@ -78,10 +63,7 @@ public class ListIntroduction1 {
             System.out.println((j+1)+". "+names.get(j) );
 
         }
-        for (int i = 0; i <10 ; i++) {
-            System.out.print("-");
 
-        }
         System.out.println();
         //Remove the 2nd element
         names.remove(1);
