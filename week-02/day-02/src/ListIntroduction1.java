@@ -78,6 +78,31 @@ public class ListIntroduction1 {
             System.out.println((j+1)+". "+names.get(j) );
 
         }
+        for (int i = 0; i <10 ; i++) {
+            System.out.print("-");
+
+        }
+        System.out.println();
+        //Remove the 2nd element
+        names.remove(1);
+
+        //Iterate through the list in a reversed order and print out each name
+        ArrayList<String> reversedList = new ArrayList();
+        for (int k = names.size() - 1; k >=0 ; k--) {
+            reversedList.add(names.get(k));
+
+        }
+
+        names = reversedList;
+        for (String reversedWord : names){
+            System.out.println(reversedWord);
+        }
+
+        //Remove all elements
+
+        names.clear();
+        
+
 
 
 
