@@ -11,28 +11,48 @@
 import java.util.Scanner;
 public class SubInt {
     public static void main(String[] args) {
-        System.out.println("Please add a number!");
-        Scanner numb = new Scanner(System.in);
-        int number = numb.nextInt();
-        System.out.println("How many parameters should we use in our array?");
-        Scanner para = new Scanner(System.in);
-        int parametersNumber = para.nextInt();
-        int [] arrey = new int[parametersNumber];
+        System.out.println("How many numbers should we use in the array?");
+        Scanner scanner = new Scanner(System.in);
+        int numberOfNumbers = scanner.nextInt();
 
-        System.out.println("Please add the parameters!");
-        for (int i = 0; i <parametersNumber ; i++) {
-            Scanner elOAr = new Scanner(System.in);
-            int elementsOfArrey = elOAr.nextInt();
-            arrey[i] = elementsOfArrey;
+        System.out.println("Which are the arrays number?");
+        int[] array = new int[numberOfNumbers];
+
+        int numberOfArray = 0;
+
+        for (int i = 0; i < numberOfNumbers; i++) {
+            Scanner scanner2 = new Scanner(System.in);
+            numberOfArray = scanner2.nextInt();
+            array[i] = numberOfArray;
+        }
+
+        System.out.println("Which number do you wanna find?");
+        Scanner scanner3 = new Scanner(System.in);
+        int toFind = scanner3.nextInt();
+
+        valami(toFind, array);
+    }
+    public static String valami (int toFind, int [] array){
+
+        String actualString= "";
+        String whichContains = "";
+        String [] stringArray = new String[array.length];
+
+        for (int i = 0; i < array.length-1 ; i++) {
+            stringArray[i] = String.valueOf(array[i]);
 
         }
-        for (int oneByOne : arrey){
 
 
+        for (int i = 0; i < array.length-1; i++) {
+            actualString = stringArray[i];
+            if (actualString.contains(String.valueOf(toFind))){
+                whichContains = whichContains + " " + actualString;
+            }
+
         }
-        for (int valami : arrey){
-            System.out.println(valami);
-        }
+        System.out.println(whichContains);
+        return whichContains;
 
     }
 }
