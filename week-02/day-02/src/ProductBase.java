@@ -56,6 +56,8 @@ public class ProductBase {
         }
         System.out.println("The number of products which are under 300 is " + below300);
 
+        //Is there anything we can buy for exactly 125?
+
         for (String product : productBase.keySet()){
             if (productBase.get(product).equals(125)){
                 System.out.println("We can buy a " + product +" for 125.");
