@@ -12,7 +12,8 @@ public class AppendAFunc {
         String mouse = appendAFunc(typo);
         System.out.println(mouse);
     }
-    public static String appendAFunc (String app){
+
+    public static String appendAFunc(String app) {
         String hamster = app + "a";
         return hamster;
     }
