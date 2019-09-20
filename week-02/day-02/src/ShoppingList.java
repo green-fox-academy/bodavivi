@@ -15,11 +15,17 @@ public class ShoppingList {
 
         //Do we have milk on the list?
         //Do we have bananas on the list?
-        if (shoppingList.contains("Milk")){
-            System.out.println("We have milk on the list");
+        if (shoppingList.contains("Milk") && shoppingList.contains("Bananas")){
+            System.out.println("We have milk and bananas on the list");
         }
-        else if (shoppingList.contains("bananas")){
-            System.out.println("We have Bananas on the list.");
+        else if (shoppingList.contains("Bananas")){
+            System.out.println("We have bananas on the list.");
+        }
+        else if (shoppingList.contains("Milk")){
+            System.out.println("We have milk on the list.");
+        }
+        else{
+            System.out.println("We don't have bananas or milk on the list.");
         }
 
 
