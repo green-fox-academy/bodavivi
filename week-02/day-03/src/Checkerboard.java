@@ -7,6 +7,8 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Checkerboard {
     public static void mainDraw(Graphics graphics) {
         // Fill the canvas with a checkerboard pattern.
+        graphics.setColor(Color.white);
+        graphics.fillRect(0,0,WIDTH,HEIGHT);
         graphics.setColor(Color.BLACK);
         for (int i = 0; i < 400; i+=50) {
             for (int j = 0; j <= 400; j += 100) {
