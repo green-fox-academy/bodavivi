@@ -10,7 +10,7 @@ public class TakesLonger {
         // First
         String part = "always takes longer than";
 
-        quote = (quote.substring(0, 20) +  " " +part + " " + quote.substring(20, 82));
+        quote = (quote.substring(0, 20) +  " " +part + " " + quote.substring(21, 82));
 
 
         System.out.println(quote);
