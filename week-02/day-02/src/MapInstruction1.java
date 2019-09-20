@@ -49,12 +49,20 @@ public class MapInstruction1 {
         hs.remove(97);
 
         //Print whether there is an associated value with key 100 or not
-        if (hs.containsKey(100)){
-            System.out.println("There is a value, which is associated the key of 100.");
-        }
-        else{
-            System.out.println("There isn't a value, which is associated the key of 100.");
+        int isOrIsNot= 0;
 
+        for (int key : hs.keySet()) {
+            if (key == 100){
+                isOrIsNot = 1;
+            }
+
+        }
+
+        if (isOrIsNot == 1){
+            System.out.println("Key 100 is valid.");
+        }
+        else {
+            System.out.println("There is no such thing as 100 key.");
         }
 
         //Remove all the key-value pairs

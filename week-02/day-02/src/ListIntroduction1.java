@@ -20,10 +20,13 @@ public class ListIntroduction1 {
 
         //Print out whether the list is empty or not
         if (names.size() == 0){
-            System.out.println("The list is empty");
+            System.out.println("The list is empty.");
+        }
+        else if (names.size() == 1) {
+            System.out.println("There is " + names.size() + " element in this list.");
         }
         else{
-            System.out.println("There are some elements in the list.");
+            System.out.println("There are " + names.size() +" elements in this list.");
         }
 
 
