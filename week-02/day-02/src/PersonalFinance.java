@@ -31,6 +31,8 @@ public class PersonalFinance {
             }
         }
         System.out.println("Our greatest expense is " + greatestExpense +" and our cheapest expense is " +cheapestExpense);
+
+
         //What was the average amount of our spendings?
         int average = (sum/finances.size());
         System.out.println(average);

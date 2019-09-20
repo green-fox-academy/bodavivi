@@ -23,9 +23,9 @@ public class TelephoneBook {
         }
 
         //Whose phone number is 307-687-2982?
-        for (String phoneNumber : telephoneBook.keySet()) {
-            if (telephoneBook.get(phoneNumber).equals("307-687-2982")) {
-                System.out.println("This phonenumber is "+phoneNumber+"s number.");
+        for (String name : telephoneBook.keySet()) {
+            if (telephoneBook.get(name).equals("307-687-2982")) {
+                System.out.println("This phonenumber is "+name+"s number.");
             }
 
 
@@ -33,10 +33,19 @@ public class TelephoneBook {
 
         //Do we know Chris E. Myers' phone number?
 
+        int inThePhonebook = 0;
+
         for (String name : telephoneBook.keySet()){
             if (name == "Chris E. Myers"){
-                System.out.println(name +"s phonenumber is" + telephoneBook.get(name));
+                inThePhonebook = 1;
             }
+        }
+
+        if (inThePhonebook == 1){
+            System.out.println("Chris E. Myers is in the phonebook.");
+        }
+        else{
+            System.out.println("Chris E. Myers isn't in the phonebook.");
         }
     }
 }
