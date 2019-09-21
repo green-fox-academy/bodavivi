@@ -20,15 +20,12 @@ public class Unique {
 
     array(unique, numberOfArray);
 
-
   }
 
   public static void array(int[] unique, int numberOfArray) {
 
-
     int isItExist = 0;
     ArrayList<Integer> realArrayList = new ArrayList<>();
-
 
     for (int i = 0; i < numberOfArray; i++) {
       for (int j = realArrayList.size() - 1; j >= 0; j--) {
@@ -42,17 +39,13 @@ public class Unique {
       isItExist = 0;
     }
 
-
     int[] result = new int[realArrayList.size()];
     System.out.print("The array contains the numbers of: ");
     for (int i = 0; i < result.length; i++) {
       result[i] = realArrayList.get(i);
       System.out.printf(result[i] + ", ");
     }
-
   }
-
-
 }
 
 
