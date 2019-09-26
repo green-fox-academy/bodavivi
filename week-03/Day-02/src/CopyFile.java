@@ -31,6 +31,7 @@ public class CopyFile {
       Files.write(pathTo, linesTo);
       result = true;
     } catch (IOException e) {
+      e.setStackTrace();
     }
     return result;
   }
