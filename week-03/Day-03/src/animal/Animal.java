@@ -10,10 +10,12 @@ public class Animal {
   }*/
 
   public void eat(){
+
     hunger-= 1;
   }
 
   public void drink(){
+
     thirst-= 1;
   }
 
