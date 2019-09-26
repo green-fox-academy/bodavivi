@@ -12,4 +12,8 @@ public class BlogPost {
     this.text = text;
     this.publicationDate = publicationDate;
   }
+
+  BlogPost(){
+
+  }
 }
