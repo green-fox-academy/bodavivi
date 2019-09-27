@@ -24,10 +24,9 @@ public class Dominoes {
 
     for (int i = 0; i < dominoes.size(); i++) {
       for (int j = 0; j < dominoes.size(); j++) {
-        if (rightOrder.get(counter).getRightSide() == dominoes.get(j).getLeftSide()) {
+        if (rightOrder.get(rightOrder.size()-1).getRightSide() == dominoes.get(j).getLeftSide()) {
           rightOrder.add(dominoes.get(j));
           dominoes.remove(j);
-          counter+=1;
         }
       }
       i--;
