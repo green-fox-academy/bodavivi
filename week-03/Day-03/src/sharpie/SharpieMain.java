@@ -2,23 +2,23 @@ package sharpie;
 
 public class SharpieMain {
   public static void main(String[] args) {
-    Sharpie pen = new Sharpie("purple", 50f);
-    Sharpie anotherPen = new Sharpie("red", 30f);
+    Sharpie sharpieOne = new Sharpie("purple", 50f);
+    Sharpie sharpieTwo = new Sharpie("red", 30f);
 
     SharpieSet sharpieSet = new SharpieSet();
 
-    sharpieSet.sharpies.add (pen);
-    sharpieSet.sharpies.add (anotherPen);
+    sharpieSet.sharpies.add (sharpieOne);
+    sharpieSet.sharpies.add (sharpieTwo);
 
-    pen.use();
-    pen.use();
-    pen.use();
-    pen.use();
-    anotherPen.use();
+    sharpieOne.use();
+    sharpieOne.use();
+    sharpieOne.use();
+    sharpieOne.use();
+    sharpieTwo.use();
 
     sharpieSet.countUsable();
 
-    System.out.println(pen.inkAmount);
+    System.out.println(sharpieOne.inkAmount);
 
   }
 }
