@@ -2,10 +2,11 @@ package counter;
 
 public class Counter {
   int integer;
-  int basic = 0;
+  int basic;
 
   Counter(){
     this.integer = 0;
+    this.basic = 0;
   }
 
   Counter(int num){
@@ -22,11 +23,10 @@ public class Counter {
   }
 
   public int get(){
-    integer = integer;
     return integer;
   }
 
   public void reset(){
-    integer = basic;
+        integer = basic;
   }
 }
