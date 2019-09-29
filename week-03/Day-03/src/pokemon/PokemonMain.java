@@ -19,7 +19,7 @@ public class PokemonMain {
     System.out.print("I choose you, ");
 
     for (Pokemon poke : pokemonOfAsh) {
-      if (poke.isEffectiveAgainst(wildPokemon) == true){
+      if (poke.effectiveAgainst == wildPokemon.type){
         System.out.println(poke.name);
       }
 
