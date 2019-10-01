@@ -16,10 +16,15 @@ public class Student extends Person {
 
     @Override
   public void introduce(){
-      System.out.println("Hi, I'm " + name +", a " + age + " year old" + gender + " from " + previousOrganization + " who skipped " + skippedDays + " days from the course already.");
-    }
+    System.out.println("Hi, I'm " + name +", a " + age + " year old" + gender + " from " + previousOrganization + " who skipped " + skippedDays + " days from the course already.");
+  }
 
-    public void skipDays (int numberOfDays){
-      skippedDays+= numberOfDays;
-    }
+  public void skipDays (int numberOfDays){
+    skippedDays+= numberOfDays;
+  }
+
+  @Override
+  public void clone(){
+
+  }
 }
