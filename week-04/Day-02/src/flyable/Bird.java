@@ -4,7 +4,7 @@ public class Bird extends Animal implements Fylable{
 
   @Override
   public void land() {
-    
+
   }
 
   @Override
