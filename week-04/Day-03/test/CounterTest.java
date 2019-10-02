@@ -9,12 +9,11 @@ public class CounterTest {
   @Test
   public void letterCounter_String(){
     Counter test = new Counter();
-    HashMap result = test.letterCounter("almafa");
+    HashMap result = test.letterCounter("madam");
     HashMap<Character, Integer> expected = new HashMap();
-    expected.put('a', 3);
-    expected.put('l', 1);
-    expected.put('m', 1);
-    expected.put('f', 1);
+    expected.put('m', 2);
+    expected.put('a', 2);
+    expected.put('d', 1);
     assertEquals(expected, result);
   }
 
