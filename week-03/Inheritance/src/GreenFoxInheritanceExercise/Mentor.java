@@ -22,7 +22,4 @@ public class Mentor extends Person {
     System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + level + " mentor.");
   }
 
-  public void clone(){
-
-  }
 }

@@ -26,7 +26,4 @@ public class Cohort {
     System.out.println("The " + name + " cohort has " + students.size() + " students and " + mentors.size() + " mentors.");
   }
 
-  public void clone(){
-
-  }
 }

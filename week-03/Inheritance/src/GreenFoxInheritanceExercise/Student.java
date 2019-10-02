@@ -23,8 +23,4 @@ public class Student extends Person {
     skippedDays+= numberOfDays;
   }
 
-  @Override
-  public void clone(){
-
-  }
 }
