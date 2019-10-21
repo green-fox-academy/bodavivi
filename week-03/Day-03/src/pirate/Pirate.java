@@ -1,14 +1,14 @@
 package pirate;
 
-public class Pirates {
+public class Pirate {
   String type;
-  int rumDrinkingCounter;
+  private int rumDrinkingCounter;
 
-  public Pirates(String type){
+  public Pirate(String type){
     this.type = type;
   }
 
-  public Pirates(){
+  public Pirate(){
 
   }
   public void drinkSomeRum(){
@@ -23,5 +23,13 @@ public class Pirates {
     }else {
       System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
     }
+  }
+
+  public int getRumDrinkingCounter() {
+    return rumDrinkingCounter;
+  }
+
+  public void setRumDrinkingCounter(int rumDrinkingCounter) {
+    this.rumDrinkingCounter = rumDrinkingCounter;
   }
 }
