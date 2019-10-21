@@ -1,8 +1,4 @@
-package Exercise10;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Fox {
@@ -43,6 +39,7 @@ public class Fox {
     System.out.println(greenFoxesLessThan5);
 
     //Write a Stream Expression to find the frequency of foxes by color!
-    
+    Map<Object, Long> frequencyOfColors = foxes.stream().collect(Collectors.groupingBy(fox -> fox.color, Collectors.counting()));
+    System.out.println(frequencyOfColors);
   }
 }
