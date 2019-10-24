@@ -1,0 +1,13 @@
+label, input{
+  display: block;
+}
+
+table{
+  display: inline;
+}
+
+button{
+  text-transform: uppercase;
+  background-color: #68B2AE;
+  
+}
