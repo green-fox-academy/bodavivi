@@ -1,0 +1,65 @@
+body{
+  background-color: lightgrey;
+}
+table{
+  background-color: white;
+  padding: 40px;
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+th, label{
+  text-transform: uppercase;
+}
+label, input{
+  display: block;
+  border-radius: 2px;
+}
+th, label, button{
+    font-family: calibri;
+}
+#password, #username, #forgot{
+  font-size: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #585858;
+}
+th{
+  font-size: 20px;
+  color: #585858;
+  font-weight: normal;
+  padding-bottom: 10px;
+}
+button{
+  border-radius: 20px;
+  background-color: #2D2D2D;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  border: none;
+}
+
+#forgot{
+  text-align: right;
+}
+
+a{
+  color: #767676;
+  text-decoration: none;
+}
+a:hover{
+  border-bottom: dotted 2px #2DA730;
+}
+button:hover{
+  background-color: #2DA730;
+}
+input:focus{
+  outline: 1px solid #2DA730;
+}
+input{
+  width: 250px;
+  height: 30px;
+  border: #EBEBEB 1px solid;
+}
