@@ -55,7 +55,17 @@ public class Index {
   @GetMapping(value = "/averagestock")
   public String averageStock(Model model){
     double average = items.stream().filter(item -> item.getQuantityOfStock() > 0).mapToInt(item -> item.getQuantityOfStock()).summaryStatistics().getAverage();
-    model.addAttribute("average", average);
+    String averageString = "Average stock is " + Double.toString(average);
+    model.addAttribute("average", averageString);
+    return "averageStock";
+  }
+
+  @GetMapping(value="/mostExpensive")
+  public String mostExpensive(Model model){
+    int highestPrice= items.stream().filter(item -> item.getQuantityOfStock() > 0).mapToInt(item -> item.getPrice()).summaryStatistics().getMax();
+    List<ShopItem> mostExpensive = items.stream().filter(item -> item.getPrice() == highestPrice).collect(Collectors.toList());
+    String mostExpensiveItem = "Most expensive item is " + mostExpensive.get(0).getName();
+    model.addAttribute("average", mostExpensiveItem);
     return "averageStock";
   }
 }
