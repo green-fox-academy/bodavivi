@@ -1,0 +1,27 @@
+<<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/indexCSS.css">
+    <title>Webshop</title>
+</head>
+<body>
+<div class="content">
+    <h1>My Shop</h1>
+    <a href="/onlyavailable" style="display: inline-block" id="filter">only available</a>
+    <a href="/cheapestfirst" style="display: inline-block" id="filter">cheapest first</a>
+    <a href="/containsnike" style="display: inline-block" id="filter">contains nike</a>
+    <a href="/averagestock" style="display: inline-block" id="filter">average stock</a>
+    <a href="#" style="display: inline-block" id="filter">most expensive available</a>
+    <div>
+        <form action="index.html" method="post">
+            <label for="text" id="searcher">Search for:</label>
+            <input type="text" autofocus id="searcherInput" name="searcherInput" placeholder="...something like nike">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <p th:text="'Average stock: ' + ${average}" ></td>
+
+</body>
+</html>
