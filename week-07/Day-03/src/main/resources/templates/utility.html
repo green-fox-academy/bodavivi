@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Links</title>
+</head>
+<body>
+<div>
+    <label>Is this email right?</label>
+    <form th:action="@{/email}" th:method="post">
+        <input type="text" name="email">
+    </form>
+    <label>Encrypt</label>
+    <form th:action="@{/caesar}" th:method="post">
+        <input type="text" name="toEncrypt">
+        <input th:type="number" name="numberToEncrypt">
+        <button type="submit">ENCRYPT!</button>
+    </form>
+
+    <label>Decrypt</label>
+    <form th:action="@{/caesarDecrypt}" th:method="post">
+        <input type="text" name="toDecrypt">
+        <input th:type="number" name="numberToDecrypt">
+        <button type="submit">DECRYPT!</button>
+    </form>
+
+</div>
+</body>
+</html>
