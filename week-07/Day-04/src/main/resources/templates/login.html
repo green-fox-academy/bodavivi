@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h1 th:text="'Welcome to Programmer Fox Club!'"></h1>
+<p th:text="'Please provide a name, so you can associate it to your pet!'"></p>
+<label>Name</label>
+<form th:action="@{/login}" th:method="post">
+    <input type="text" name="name" required placeholder="pet name" oninvalid="this.setCustomValidity('Please add a name')">
+    <button type="submit">GO</button>
+</form>
+</body>
+</html>
