@@ -3,6 +3,7 @@ package com.bodavivi.greenfoxclub.controllers;
 import com.bodavivi.greenfoxclub.models.Fox;
 import com.bodavivi.greenfoxclub.services.MainService;
 import com.bodavivi.greenfoxclub.services.MainServiceImpl;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +22,7 @@ public class MainController {
   public String index(Model model, @RequestParam(name = "name", required = false) String name) {
     Fox actualfox = mainService.findFox(name);
 
-    if (name == null) {
+    if (actualfox.getName()== null) {
       return "login";
     } else {
       model.addAttribute("fox", actualfox);
@@ -53,5 +54,18 @@ public class MainController {
       mainService.addFox(fox);
       return "redirect:/?name=" + fox.getName();
     }
+  }
+
+  @GetMapping(value = "/nutritionstore")
+  public String nutritionGet(@RequestParam String name, Model model){
+    model.addAttribute("name", name);
+    return "nutrition";
+  }
+
+  @PostMapping(value = "/nutritionstore")
+  public String nutrition(@RequestParam String name, @RequestParam String drink, @RequestParam String food){
+   mainService.findFox(name).setDrink(drink);
+   mainService.findFox(name).setFood(food);
+   return "redirect:/?name=" + name;
   }
 }
