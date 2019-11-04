@@ -1,6 +1,9 @@
 package com.bodavivi.greenfoxclub.controllers;
 
 import com.bodavivi.greenfoxclub.models.Fox;
+import com.bodavivi.greenfoxclub.services.MainService;
+import com.bodavivi.greenfoxclub.services.MainServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,36 +11,27 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 public class MainController {
-  List<Fox> foxes = new ArrayList<>();
+
+  @Autowired
+  private MainService mainService;
 
   @GetMapping(value = {"", "/"})
-  public String index(Model model, @RequestParam (name = "name", required = false) String name) {
-    Fox actualfox = new Fox("anonymus", "kavics", "viz");
+  public String index(Model model, @RequestParam(name = "name", required = false) String name) {
+    Fox actualfox = mainService.findFox(name);
 
-    for(Fox fox : foxes){
-      if (fox.getName().equals(name)){
-       actualfox = fox;
-      }
-    }
-
-    if (name == null){
+    if (name == null) {
       return "login";
-    }else {
-      model.addAttribute("name", actualfox.getName());
-      model.addAttribute("food", actualfox.getFood());
-      model.addAttribute("drink", actualfox.getDrink());
+    } else {
+      model.addAttribute("fox", actualfox);
       model.addAttribute("tricks", actualfox.getTricks().size());
       return "index";
     }
   }
 
   @GetMapping(value = {"/login"})
-  public String logIn(){
+  public String logIn() {
     return "login";
   }
 
@@ -46,14 +40,18 @@ public class MainController {
     return "redirect:/?name=" + name;
   }
 
-  @GetMapping(value ={"/create"})
+  @GetMapping(value = {"/create"})
   public String createForm(@ModelAttribute("fox") Fox fox) {
     return "create";
   }
 
   @PostMapping(value = {"/create"})
-  public String createFox(@ModelAttribute("fox") Fox fox){
-    foxes.add(fox);
-    return "redirect:/?name=" + fox.getName();
+  public String createFox(@ModelAttribute("fox") Fox fox) {
+    if (mainService.alreadyExist(fox)) {
+      return "redirect:/create";
+    } else {
+      mainService.addFox(fox);
+      return "redirect:/?name=" + fox.getName();
+    }
   }
 }
