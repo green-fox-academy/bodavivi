@@ -4,6 +4,7 @@ import com.bodavivi.greenfoxclub.models.Fox;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -11,6 +12,12 @@ public class MainServiceImpl implements MainService {
 
   private static final Fox DEFAULT_FOX = new Fox();
   private static final List<Fox> FOXES = new ArrayList<>();
+  private static final List<String> trickLibrary = new ArrayList<>(Arrays.asList("Do Spartan Race", "Programming in java", "Make pancakes", "Read a book", "Play Hearthstone"));
+
+  @Override
+  public List<String> getTrickLibrary() {
+    return trickLibrary;
+  }
 
   @Override
   public void addFox(Fox fox) {
@@ -37,7 +44,8 @@ public class MainServiceImpl implements MainService {
         exist = true;
       }
     }
-
     return exist;
   }
+
+
 }

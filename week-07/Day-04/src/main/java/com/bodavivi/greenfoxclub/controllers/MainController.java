@@ -26,7 +26,6 @@ public class MainController {
       return "login";
     } else {
       model.addAttribute("fox", actualfox);
-      model.addAttribute("tricks", actualfox.getTricks().size());
       return "index";
     }
   }
@@ -54,18 +53,5 @@ public class MainController {
       mainService.addFox(fox);
       return "redirect:/?name=" + fox.getName();
     }
-  }
-
-  @GetMapping(value = "/nutritionstore")
-  public String nutritionGet(@RequestParam String name, Model model){
-    model.addAttribute("name", name);
-    return "nutrition";
-  }
-
-  @PostMapping(value = "/nutritionstore")
-  public String nutrition(@RequestParam String name, @RequestParam String drink, @RequestParam String food){
-   mainService.findFox(name).setDrink(drink);
-   mainService.findFox(name).setFood(food);
-   return "redirect:/?name=" + name;
   }
 }
