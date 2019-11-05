@@ -1,4 +1,5 @@
 package com.bodavivi.connectionwithsql.models;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,15 +8,21 @@ import javax.persistence.Id;
 @Entity
 public class Todo {
 
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Id
   private long id;
   private String title;
   private boolean urgent;
   private boolean done;
 
-  public Todo(){
+  public Todo() {
 
+  }
+
+  public Todo(String title, boolean urgent, boolean done) {
+    this.title = title;
+    this.urgent = urgent;
+    this.done = done;
   }
 
   public Todo(String title) {
