@@ -7,5 +7,7 @@ import java.util.List;
 public interface TodoService {
 
  List<Todo> list(Boolean isActive);
+ Todo findById(long id);
+ List<Todo> searched(String string);
 
 }
