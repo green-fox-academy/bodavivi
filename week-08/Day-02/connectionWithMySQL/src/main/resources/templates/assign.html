@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
     <meta charset="UTF-8">
     <title>Assign</title>
 </head>
 <body>
-<form th:action="@{/todos/assignee}">
-    <input type="email" th:name="email" placeholder="your e-mail adress">
-    <input type="email" th:name="email" placeholder="your e-mail adress">
+<form th:action="@{/todo/assigneeslist}" th:method="post">
+    <input type="text" th:name="name" placeholder="your name">
+    <input type="email" th:name="email" placeholder="your e-mail address">
+    <button type="submit">Add an assignee</button>
 </form>
-
 </body>
 </html>

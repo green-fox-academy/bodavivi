@@ -1,6 +1,8 @@
 package com.bodavivi.connectionwithsql.controllers;
 
+import com.bodavivi.connectionwithsql.models.Assignee;
 import com.bodavivi.connectionwithsql.models.Todo;
+import com.bodavivi.connectionwithsql.repositories.AssigneeRepo;
 import com.bodavivi.connectionwithsql.repositories.TodoRepo;
 import com.bodavivi.connectionwithsql.services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping(value = "/todo")
@@ -17,6 +18,9 @@ public class TodoController {
 
   @Autowired
   TodoRepo repo;
+
+  @Autowired
+  AssigneeRepo assigneeRepo;
 
   @Autowired
   TodoService todoService;
@@ -67,8 +71,15 @@ public class TodoController {
     return "todolist";
   }
 
-  @GetMapping(value = "/assignee")
+  @GetMapping(value = "/addassignee")
   public String assign(){
     return "assign";
+  }
+
+  @PostMapping(value = "/assigneeslist")
+  public String assignList(Model model, @RequestParam(name = "name") String name, @RequestParam(name="email") String email){
+    assigneeRepo.save(new Assignee(name, email));
+    model.addAttribute("assigneeList", assigneeRepo.findAll());
+    return "assignee";
   }
 }
