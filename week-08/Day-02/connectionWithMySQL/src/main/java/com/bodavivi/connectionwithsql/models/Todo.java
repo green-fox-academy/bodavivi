@@ -1,13 +1,17 @@
 package com.bodavivi.connectionwithsql.models;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 public class Todo {
 
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Id
-  private long id;
+  private Long id;
   private String title;
   private boolean urgent;
   private boolean done;
@@ -28,11 +32,11 @@ public class Todo {
     this.title = title;
   }
 
-  public long getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -60,8 +64,11 @@ public class Todo {
     this.done = done;
   }
 
-  public void setAssignee(Assignee assigneeToAdd){
-    assignee = assigneeToAdd;
-    assigneeToAdd.addTodo(this);
+  public void setAssignee(Assignee assignee) {
+    this.assignee = assignee;
+    //assignee.addTodo(this);
+  }
+  public Assignee getAssignee() {
+    return assignee;
   }
 }

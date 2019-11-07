@@ -1,10 +1,8 @@
 package com.bodavivi.connectionwithsql.controllers;
-
 import com.bodavivi.connectionwithsql.models.Assignee;
 import com.bodavivi.connectionwithsql.models.Todo;
 import com.bodavivi.connectionwithsql.repositories.AssigneeRepo;
 import com.bodavivi.connectionwithsql.repositories.TodoRepo;
-import com.bodavivi.connectionwithsql.services.AssigneeService;
 import com.bodavivi.connectionwithsql.services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +20,9 @@ public class TodoController {
 
   @Autowired
   TodoService todoService;
+
+  @Autowired
+  AssigneeRepo assigneeRepo;
 
   @GetMapping(value = {"/", "/list"})
   public String list(Model model, @RequestParam(required = false) Boolean isActive) {
@@ -54,11 +55,13 @@ public class TodoController {
   @GetMapping(value = "/{id}/edit")
   public String update(@PathVariable long id, Model model) {
     model.addAttribute("todo", todoService.findById(id));
+    model.addAttribute("listOfAssignees", assigneeRepo.findAll());
     return "edit";
   }
 
   @PostMapping(value = "/{id}/edit")
-  public String update(@ModelAttribute(name = "todo") Todo todo) {
+  public String update(@ModelAttribute(name = "todo") Todo todo, @RequestParam(name ="assigneeId") Long assigneeId) {
+    todo.setAssignee(assigneeRepo.findById(assigneeId).orElse(null));
     repo.save(todo);
     return "redirect:/todo/";
   }

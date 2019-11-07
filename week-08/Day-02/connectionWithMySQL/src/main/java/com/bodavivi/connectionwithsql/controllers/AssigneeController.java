@@ -1,11 +1,13 @@
 package com.bodavivi.connectionwithsql.controllers;
 import com.bodavivi.connectionwithsql.models.Assignee;
 import com.bodavivi.connectionwithsql.repositories.AssigneeRepo;
+import com.bodavivi.connectionwithsql.repositories.TodoRepo;
 import com.bodavivi.connectionwithsql.services.AssigneeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import java.util.stream.Collectors;
 
 @RequestMapping(value = "/todo")
 @Controller
@@ -14,6 +16,8 @@ public class AssigneeController {
   AssigneeService assigneeService;
   @Autowired
   AssigneeRepo assigneeRepo;
+  @Autowired
+  TodoRepo todoRepo;
 
   @GetMapping(value = "/assignee")
   public String assign(Model model){
@@ -41,8 +45,15 @@ public class AssigneeController {
   }
 
   @GetMapping(value = "/{id}/deleteassignee")
-  public String deleteAssignee(@PathVariable long id){
+  public String deleteAssignee(@PathVariable Long id){
+    assigneeRepo.findById(id).get().getTodos().stream().forEach(todo -> todo.setAssignee(null));
     assigneeRepo.deleteById(id);
     return "redirect:/todo/assignee";
+  }
+
+ @GetMapping(value = "/{id}/assigneestodos")
+  public String assigneesTodos(@PathVariable Long id, Model model){
+   model.addAttribute("todos", assigneeRepo.findById(id).get().getTodos().stream().collect(Collectors.toList()));
+   return "todolist";
   }
 }

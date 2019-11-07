@@ -12,6 +12,10 @@
     <input name="done" type="checkbox" th:field="*{done}" th:checked="*{done}">
     <p>Is it urgent?</p>
     <input name="done" type="checkbox" th:field="*{urgent}" th:checked="*{urgent}" >
+    <p>Who is the assignee of this task?</p>
+    <select name="assigneeId">
+    <option th:each="assignee : ${listOfAssignees}" th:text="${assignee.name}" th:value="${assignee.getId()}" ></option>
+    </select>
     <button type="submit">edit</button>
 </form>
 <a th:href="@{/todo/}">cancel</a>

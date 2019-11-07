@@ -1,32 +1,34 @@
 package com.bodavivi.connectionwithsql.models;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Assignee {
 
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Id
-  private long id;
+  private Long id;
   private String name;
   private String email;
-  @OneToMany(cascade = CascadeType.ALL, mappedBy = "assignee")
+  @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "assignee", fetch = FetchType.LAZY)
   private List<Todo> todos;
 
   public Assignee() {
-
+  this.todos = new ArrayList<>();
   }
 
   public Assignee(String name, String email) {
     this.name = name;
     this.email = email;
+    this.todos = new ArrayList<>();
   }
 
-  public long getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -46,8 +48,16 @@ public class Assignee {
     this.email = email;
   }
 
-  public void addTodo(Todo todo) {
-    todo.setAssignee(this);
-    todos.add(todo);
+ public void addTodo(Todo todo) {
+   todo.setAssignee(this);
+   todos.add(todo);
+ }
+
+  public List<Todo> getTodos() {
+    return todos;
+  }
+
+  public void setTodos(List<Todo> todos) {
+    this.todos = todos;
   }
 }

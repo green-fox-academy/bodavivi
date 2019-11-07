@@ -16,7 +16,7 @@
         <th>Email</th>
     </tr>
     <tr th:each="assignee : ${assigneeList}">
-        <td th:text="${assignee.getName()}"></td>
+        <td><a th:href="@{'/todo/' + ${assignee.getId()} + '/assigneestodos'}" th:text="${assignee.getName()}"></td>
         <td th:text="${assignee.getEmail()}"></td>
         <td><a th:href="@{'/todo/' + ${assignee.id} + '/editassignee'}">edit</a></td>
         <td><a th:href="@{'/todo/' + ${assignee.id} + '/deleteassignee'}">delete</a></td>

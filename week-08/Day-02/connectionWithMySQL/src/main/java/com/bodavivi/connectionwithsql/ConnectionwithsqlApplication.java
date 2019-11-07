@@ -26,10 +26,27 @@ public class ConnectionwithsqlApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    Assignee Marci = new Assignee("Marci", "marci@greenfox.com");
-    Todo mandarin = new Todo("Eat mandarin", true, false);
+    Assignee vivi = new Assignee("Vivi", "vivi@greenfox.com");
+    Todo appla = new Todo("Eat appla", true, false);
 
-    Marci.addTodo(mandarin);
-    assigneeRepo.save(Marci);
+    vivi.addTodo(appla);
+    assigneeRepo.save(vivi);
+
+    Assignee valen = new Assignee("Valen", "valen@greenfox.com");
+    Todo banana = new Todo("Eat banana ", false, true);
+
+    Todo coconat = new Todo("Drink coconut water", true, false);
+
+    valen.addTodo(banana);
+    valen.addTodo(coconat);
+
+    assigneeRepo.save(valen);
+
+    Assignee barna = new Assignee("Barna", "sth@sth.com");
+    Todo sth = new Todo("do sth", true, false);
+
+    barna.addTodo(sth);
+    assigneeRepo.save(barna);
+    System.out.println(vivi.getTodos().toString());
   }
 }
