@@ -1,19 +1,19 @@
 package com.bodavivi.connectionwithsql.models;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Assignee {
+
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Id
   private long id;
   private String name;
   private String email;
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "assignee")
+  private List<Todo> todos;
 
-  public Assignee(){
+  public Assignee() {
 
   }
 
@@ -44,5 +44,10 @@ public class Assignee {
 
   public void setEmail(String email) {
     this.email = email;
+  }
+
+  public void addTodo(Todo todo) {
+    todo.setAssignee(this);
+    todos.add(todo);
   }
 }

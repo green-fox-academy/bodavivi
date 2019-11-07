@@ -1,9 +1,6 @@
 package com.bodavivi.connectionwithsql.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Todo {
@@ -14,6 +11,8 @@ public class Todo {
   private String title;
   private boolean urgent;
   private boolean done;
+  @ManyToOne()
+  private Assignee assignee;
 
   public Todo() {
 
@@ -59,5 +58,10 @@ public class Todo {
 
   public void setDone(boolean done) {
     this.done = done;
+  }
+
+  public void setAssignee(Assignee assigneeToAdd){
+    assignee = assigneeToAdd;
+    assigneeToAdd.addTodo(this);
   }
 }
