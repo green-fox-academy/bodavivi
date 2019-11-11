@@ -7,6 +7,6 @@ public class BassGuitar extends StringedInstrument {
   }
 
   public BassGuitar(int numberOfStrings){
-    super("Bass Guitar",numberOfStrings, "Duum-duum-duum");
+    super("Bass Guitar", numberOfStrings, "Duum-duum-duum");
   }
 }

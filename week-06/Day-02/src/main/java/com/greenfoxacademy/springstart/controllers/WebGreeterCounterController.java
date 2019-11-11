@@ -11,6 +11,7 @@ import java.util.concurrent.atomic.AtomicLong;
 @Controller
 public class WebGreeterCounterController {
   AtomicLong counter = new AtomicLong();
+
   @RequestMapping(value = "/web/greeting2")
   @ResponseBody
   public String greetCounter(@RequestParam String name){

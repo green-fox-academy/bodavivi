@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class FoxController {
   @Autowired
-  MainService mainService;
+  private MainService mainService;
 
   @GetMapping(value = "/nutritionstore")
   public String nutritionGet(@RequestParam String name, Model model) {

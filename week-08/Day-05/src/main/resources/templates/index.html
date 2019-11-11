@@ -13,6 +13,7 @@
         <td><a th:href="@{${post.id} + '/ratingup'}">+</a></td>
         <td><a th:href="@{${post.id} + '/ratingdown'}">-</a></td>
         <td><a th:href="${post.getLink()}" th:text="${post.getTitle()}"></a></td>
+        <td th:text="${post.getDate()}"></td>
     </tr>
 </table>
 </body>

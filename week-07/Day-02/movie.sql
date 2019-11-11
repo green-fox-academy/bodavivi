@@ -1,0 +1,2 @@
+-- For any rating where the reviewer is the same as the director of the movie, return the reviewer name, movie title, and number of stars.
+SELECT name, title, stars FROM reviewer, movie, rating WHERE reviewer.rID = rating.rID AND rating.mID = movie.mID AND reviewer.name = movie.director;
