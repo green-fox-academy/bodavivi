@@ -1,5 +1,6 @@
 package com.bodavivi.groot.controllers;
 
+import com.bodavivi.groot.models.Cargo;
 import com.bodavivi.groot.models.GrootError;
 import com.bodavivi.groot.models.GrootMessage;
 import com.bodavivi.groot.models.YondusArrow;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GuardienController {
+
+  Cargo actualCargo = new Cargo();
 
   @GetMapping(value = "/groot")
   public ResponseEntity groot(@RequestParam(name = "message", required = false) String message){
@@ -30,5 +33,10 @@ public class GuardienController {
     }else{
       return ResponseEntity.status(HttpStatus.OK).body(new YondusArrow(distance, time));
     }
+  }
+
+  @GetMapping(value = "/rocket")
+  public ResponseEntity rocket(){
+    return ResponseEntity.status(HttpStatus.OK).body(actualCargo);
   }
 }

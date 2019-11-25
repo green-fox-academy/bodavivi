@@ -62,4 +62,10 @@ public class GuardienControllerTest {
     mockMvc.perform(get("/yondu").param("distance", "100").param("time", "0"))
         .andExpect(status().isBadGateway());
   }
+
+  @Test
+  public void rocker() throws Exception {
+    mockMvc.perform(get("/rocket"))
+        .andExpect(status().isOk());
+  }
 }
